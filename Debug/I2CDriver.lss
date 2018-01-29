@@ -1,0 +1,674 @@
+
+I2CDriver.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000002  00800100  0000036a  000003fe  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000036a  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000003a  00800102  00800102  00000400  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000400  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000430  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000058  00000000  00000000  00000470  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000b20  00000000  00000000  000004c8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 0000080a  00000000  00000000  00000fe8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   0000047b  00000000  00000000  000017f2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000000c8  00000000  00000000  00001c70  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000056a  00000000  00000000  00001d38  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000002e6  00000000  00000000  000022a2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000050  00000000  00000000  00002588  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 65 00 	jmp	0xca	; 0xca <__ctors_end>
+   4:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+   8:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+   c:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  10:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  14:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  18:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  1c:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  20:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  24:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  28:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  2c:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  30:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  34:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  38:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  3c:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  40:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  44:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  48:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  4c:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  50:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  54:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  58:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  5c:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  60:	0c 94 4c 01 	jmp	0x298	; 0x298 <__vector_24>
+  64:	0c 94 82 00 	jmp	0x104	; 0x104 <__bad_interrupt>
+  68:	70 01       	movw	r14, r0
+  6a:	9c 01       	movw	r18, r24
+  6c:	9c 01       	movw	r18, r24
+  6e:	9c 01       	movw	r18, r24
+  70:	9c 01       	movw	r18, r24
+  72:	9c 01       	movw	r18, r24
+  74:	9c 01       	movw	r18, r24
+  76:	9c 01       	movw	r18, r24
+  78:	70 01       	movw	r14, r0
+  7a:	9c 01       	movw	r18, r24
+  7c:	9c 01       	movw	r18, r24
+  7e:	9c 01       	movw	r18, r24
+  80:	9c 01       	movw	r18, r24
+  82:	9c 01       	movw	r18, r24
+  84:	9c 01       	movw	r18, r24
+  86:	9c 01       	movw	r18, r24
+  88:	78 01       	movw	r14, r16
+  8a:	9c 01       	movw	r18, r24
+  8c:	9c 01       	movw	r18, r24
+  8e:	9c 01       	movw	r18, r24
+  90:	9c 01       	movw	r18, r24
+  92:	9c 01       	movw	r18, r24
+  94:	9c 01       	movw	r18, r24
+  96:	9c 01       	movw	r18, r24
+  98:	95 01       	movw	r18, r10
+  9a:	9c 01       	movw	r18, r24
+  9c:	9c 01       	movw	r18, r24
+  9e:	9c 01       	movw	r18, r24
+  a0:	9c 01       	movw	r18, r24
+  a2:	9c 01       	movw	r18, r24
+  a4:	9c 01       	movw	r18, r24
+  a6:	9c 01       	movw	r18, r24
+  a8:	78 01       	movw	r14, r16
+  aa:	9c 01       	movw	r18, r24
+  ac:	9c 01       	movw	r18, r24
+  ae:	9c 01       	movw	r18, r24
+  b0:	9c 01       	movw	r18, r24
+  b2:	9c 01       	movw	r18, r24
+  b4:	9c 01       	movw	r18, r24
+  b6:	9c 01       	movw	r18, r24
+  b8:	95 01       	movw	r18, r10
+  ba:	9c 01       	movw	r18, r24
+  bc:	9c 01       	movw	r18, r24
+  be:	9c 01       	movw	r18, r24
+  c0:	9c 01       	movw	r18, r24
+  c2:	9c 01       	movw	r18, r24
+  c4:	9c 01       	movw	r18, r24
+  c6:	9c 01       	movw	r18, r24
+  c8:	95 01       	movw	r18, r10
+
+000000ca <__ctors_end>:
+  ca:	11 24       	eor	r1, r1
+  cc:	1f be       	out	0x3f, r1	; 63
+  ce:	cf ef       	ldi	r28, 0xFF	; 255
+  d0:	d8 e0       	ldi	r29, 0x08	; 8
+  d2:	de bf       	out	0x3e, r29	; 62
+  d4:	cd bf       	out	0x3d, r28	; 61
+
+000000d6 <__do_copy_data>:
+  d6:	11 e0       	ldi	r17, 0x01	; 1
+  d8:	a0 e0       	ldi	r26, 0x00	; 0
+  da:	b1 e0       	ldi	r27, 0x01	; 1
+  dc:	ea e6       	ldi	r30, 0x6A	; 106
+  de:	f3 e0       	ldi	r31, 0x03	; 3
+  e0:	02 c0       	rjmp	.+4      	; 0xe6 <__do_copy_data+0x10>
+  e2:	05 90       	lpm	r0, Z+
+  e4:	0d 92       	st	X+, r0
+  e6:	a2 30       	cpi	r26, 0x02	; 2
+  e8:	b1 07       	cpc	r27, r17
+  ea:	d9 f7       	brne	.-10     	; 0xe2 <__do_copy_data+0xc>
+
+000000ec <__do_clear_bss>:
+  ec:	21 e0       	ldi	r18, 0x01	; 1
+  ee:	a2 e0       	ldi	r26, 0x02	; 2
+  f0:	b1 e0       	ldi	r27, 0x01	; 1
+  f2:	01 c0       	rjmp	.+2      	; 0xf6 <.do_clear_bss_start>
+
+000000f4 <.do_clear_bss_loop>:
+  f4:	1d 92       	st	X+, r1
+
+000000f6 <.do_clear_bss_start>:
+  f6:	ac 33       	cpi	r26, 0x3C	; 60
+  f8:	b2 07       	cpc	r27, r18
+  fa:	e1 f7       	brne	.-8      	; 0xf4 <.do_clear_bss_loop>
+  fc:	0e 94 84 00 	call	0x108	; 0x108 <main>
+ 100:	0c 94 b3 01 	jmp	0x366	; 0x366 <_exit>
+
+00000104 <__bad_interrupt>:
+ 104:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000108 <main>:
+unsigned char oscBuff[1];
+unsigned char onBuff[1];
+unsigned char brightBuff[1];
+int main(void)
+{
+   sei();
+ 108:	78 94       	sei
+   unsigned char counter = 0;
+ 10a:	d0 e0       	ldi	r29, 0x00	; 0
+    /* Replace with your application code */
+    while (1)
+    {
+        // paint one LED per row. The HT16K33 internal memory looks like
+        // a 8x16 bit matrix (8 rows, 16 columns)
+        brightBuff[0] = 0xEF;
+ 10c:	0f 2e       	mov	r0, r31
+ 10e:	ff ee       	ldi	r31, 0xEF	; 239
+ 110:	af 2e       	mov	r10, r31
+ 112:	f0 2d       	mov	r31, r0
+        onBuff[0] = 0x81;
+ 114:	0f 2e       	mov	r0, r31
+ 116:	f1 e8       	ldi	r31, 0x81	; 129
+ 118:	bf 2e       	mov	r11, r31
+ 11a:	f0 2d       	mov	r31, r0
+        oscBuff[0] = 0x21;
+ 11c:	11 e2       	ldi	r17, 0x21	; 33
+        buffer[0] = 0;
+ 11e:	0f 2e       	mov	r0, r31
+ 120:	fb e2       	ldi	r31, 0x2B	; 43
+ 122:	cf 2e       	mov	r12, r31
+ 124:	f1 e0       	ldi	r31, 0x01	; 1
+ 126:	df 2e       	mov	r13, r31
+ 128:	f0 2d       	mov	r31, r0
+ 12a:	0f 2e       	mov	r0, r31
+ 12c:	fc e3       	ldi	r31, 0x3C	; 60
+ 12e:	ef 2e       	mov	r14, r31
+ 130:	f1 e0       	ldi	r31, 0x01	; 1
+ 132:	ff 2e       	mov	r15, r31
+ 134:	f0 2d       	mov	r31, r0
+        for (uint8_t i=1; i<17; i++) 
+        {
+           buffer[i] = 0xFF;//1 << counter+i;
+ 136:	cf ef       	ldi	r28, 0xFF	; 255
+    /* Replace with your application code */
+    while (1)
+    {
+        // paint one LED per row. The HT16K33 internal memory looks like
+        // a 8x16 bit matrix (8 rows, 16 columns)
+        brightBuff[0] = 0xEF;
+ 138:	a0 92 29 01 	sts	0x0129, r10	; 0x800129 <brightBuff>
+        onBuff[0] = 0x81;
+ 13c:	b0 92 28 01 	sts	0x0128, r11	; 0x800128 <onBuff>
+        oscBuff[0] = 0x21;
+ 140:	10 93 2a 01 	sts	0x012A, r17	; 0x80012a <oscBuff>
+        buffer[0] = 0;
+ 144:	f6 01       	movw	r30, r12
+ 146:	10 82       	st	Z, r1
+ 148:	ec e2       	ldi	r30, 0x2C	; 44
+ 14a:	f1 e0       	ldi	r31, 0x01	; 1
+        for (uint8_t i=1; i<17; i++) 
+        {
+           buffer[i] = 0xFF;//1 << counter+i;
+ 14c:	c1 93       	st	Z+, r28
+        // a 8x16 bit matrix (8 rows, 16 columns)
+        brightBuff[0] = 0xEF;
+        onBuff[0] = 0x81;
+        oscBuff[0] = 0x21;
+        buffer[0] = 0;
+        for (uint8_t i=1; i<17; i++) 
+ 14e:	ee 15       	cp	r30, r14
+ 150:	ff 05       	cpc	r31, r15
+ 152:	e1 f7       	brne	.-8      	; 0x14c <main+0x44>
+        {
+           buffer[i] = 0xFF;//1 << counter+i;
+        }
+        twi_Init();
+ 154:	0e 94 d8 00 	call	0x1b0	; 0x1b0 <twi_Init>
+
+        // This is from the LED Doc. Will work on this magic document.
+        twi_WriteTo(0x70, oscBuff, 1, 1, 1);
+ 158:	01 e0       	ldi	r16, 0x01	; 1
+ 15a:	21 e0       	ldi	r18, 0x01	; 1
+ 15c:	41 e0       	ldi	r20, 0x01	; 1
+ 15e:	6a e2       	ldi	r22, 0x2A	; 42
+ 160:	71 e0       	ldi	r23, 0x01	; 1
+ 162:	80 e7       	ldi	r24, 0x70	; 112
+ 164:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <twi_WriteTo>
+        twi_WriteTo(0x70, onBuff, 1, 1, 1);
+ 168:	21 e0       	ldi	r18, 0x01	; 1
+ 16a:	41 e0       	ldi	r20, 0x01	; 1
+ 16c:	68 e2       	ldi	r22, 0x28	; 40
+ 16e:	71 e0       	ldi	r23, 0x01	; 1
+ 170:	80 e7       	ldi	r24, 0x70	; 112
+ 172:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <twi_WriteTo>
+        twi_WriteTo(0x70, brightBuff, 1, 1, 1);
+ 176:	21 e0       	ldi	r18, 0x01	; 1
+ 178:	41 e0       	ldi	r20, 0x01	; 1
+ 17a:	69 e2       	ldi	r22, 0x29	; 41
+ 17c:	71 e0       	ldi	r23, 0x01	; 1
+ 17e:	80 e7       	ldi	r24, 0x70	; 112
+ 180:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <twi_WriteTo>
+
+        twi_WriteTo(0x70, buffer, 17, 1, 1);
+ 184:	21 e0       	ldi	r18, 0x01	; 1
+ 186:	41 e1       	ldi	r20, 0x11	; 17
+ 188:	b6 01       	movw	r22, r12
+ 18a:	80 e7       	ldi	r24, 0x70	; 112
+ 18c:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <twi_WriteTo>
+
+        counter++;
+ 190:	df 5f       	subi	r29, 0xFF	; 255
+        if (counter >= 16) counter = 0;
+ 192:	d0 31       	cpi	r29, 0x10	; 16
+ 194:	88 f2       	brcs	.-94     	; 0x138 <main+0x30>
+ 196:	d0 e0       	ldi	r29, 0x00	; 0
+ 198:	cf cf       	rjmp	.-98     	; 0x138 <main+0x30>
+
+0000019a <handler_TWI_Stop>:
+}
+
+static void handler_TWI_Stop(void)
+{
+     // send stop condition
+     TWCR = mcontrol_TWI_On_State() | control_TWI_Handled() | control_TWI_Send_Stop();
+ 19a:	85 ed       	ldi	r24, 0xD5	; 213
+ 19c:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7e00bc>
+
+     // wait for stop condition to be exectued on bus
+     // TWINT is not set after a stop condition!
+     while(TWCR & (1 << TWSTO))
+ 1a0:	ec eb       	ldi	r30, 0xBC	; 188
+ 1a2:	f0 e0       	ldi	r31, 0x00	; 0
+ 1a4:	80 81       	ld	r24, Z
+ 1a6:	84 fd       	sbrc	r24, 4
+ 1a8:	fd cf       	rjmp	.-6      	; 0x1a4 <handler_TWI_Stop+0xa>
+     {
+        continue;
+     }
+
+     // update twi state
+     twi_State = TWI_AVAILABLE;
+ 1aa:	10 92 27 01 	sts	0x0127, r1	; 0x800127 <twi_State>
+ 1ae:	08 95       	ret
+
+000001b0 <twi_Init>:
+}
+
+void twi_Init(void)
+{
+  // initialize state
+  twi_State = TWI_AVAILABLE;
+ 1b0:	10 92 27 01 	sts	0x0127, r1	; 0x800127 <twi_State>
+
+  // initialize twi prescaler and bit rate
+  sbi(TWSR, TWPS0);
+ 1b4:	e9 eb       	ldi	r30, 0xB9	; 185
+ 1b6:	f0 e0       	ldi	r31, 0x00	; 0
+ 1b8:	80 81       	ld	r24, Z
+ 1ba:	81 60       	ori	r24, 0x01	; 1
+ 1bc:	80 83       	st	Z, r24
+  sbi(TWSR, TWPS1);
+ 1be:	80 81       	ld	r24, Z
+ 1c0:	82 60       	ori	r24, 0x02	; 2
+ 1c2:	80 83       	st	Z, r24
+   return control_TWI_Enable() | control_TWI_Interrupts_On();
+}
+
+static void twi_Set_BR(unsigned int aiFreq)
+{
+   TWBR = ((CLOCK_FREQUENCY / aiFreq) - 16) / 2 /* *PreScaler */;
+ 1c4:	88 e9       	ldi	r24, 0x98	; 152
+ 1c6:	80 93 b8 00 	sts	0x00B8, r24	; 0x8000b8 <__TEXT_REGION_LENGTH__+0x7e00b8>
+  sbi(TWSR, TWPS0);
+  sbi(TWSR, TWPS1);
+  twi_Set_BR(SCL_FREQUENCY);
+
+  // From summary of all TWI transmissions pg 269.
+  TWCR = control_TWI_Interrupts_On() | control_TWI_Enable() | control_TWI_Acknowledge();
+ 1ca:	85 e4       	ldi	r24, 0x45	; 69
+ 1cc:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7e00bc>
+ 1d0:	08 95       	ret
+
+000001d2 <twi_WriteTo>:
+}
+
+unsigned char twi_WriteTo( unsigned char address, unsigned char* data,
+                           unsigned char length, unsigned char wait,
+                           unsigned char sendStop )
+{
+ 1d2:	0f 93       	push	r16
+    // ensure data will fit into buffer
+    if(TWI_BUFFER_LENGTH < length)
+ 1d4:	41 32       	cpi	r20, 0x21	; 33
+ 1d6:	08 f0       	brcs	.+2      	; 0x1da <twi_WriteTo+0x8>
+ 1d8:	57 c0       	rjmp	.+174    	; 0x288 <twi_WriteTo+0xb6>
+    {
+       return 1;
+    }
+
+    // wait until twi is ready, become master transmitter
+    while(twi_State != TWI_AVAILABLE)
+ 1da:	30 91 27 01 	lds	r19, 0x0127	; 0x800127 <twi_State>
+ 1de:	31 11       	cpse	r19, r1
+ 1e0:	fc cf       	rjmp	.-8      	; 0x1da <twi_WriteTo+0x8>
+    {
+       continue;
+    }
+
+    twi_State = TWI_MASTER_TX;
+ 1e2:	92 e0       	ldi	r25, 0x02	; 2
+ 1e4:	90 93 27 01 	sts	0x0127, r25	; 0x800127 <twi_State>
+    twi_SendStop = sendStop;
+ 1e8:	00 93 00 01 	sts	0x0100, r16	; 0x800100 <__data_start>
+    // reset error state (0xFF.. no error occured)
+    twi_LastError = 0xFF;
+ 1ec:	9f ef       	ldi	r25, 0xFF	; 255
+ 1ee:	90 93 25 01 	sts	0x0125, r25	; 0x800125 <twi_LastError>
+
+    // initialize buffer iteration vars
+    twi_Master_Buffer_Index= 0;
+ 1f2:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <__data_end>
+    twi_Master_Buffer_Length = length;
+ 1f6:	40 93 03 01 	sts	0x0103, r20	; 0x800103 <twi_Master_Buffer_Length>
+    
+    // copy data to twi buffer
+    for(unsigned char i = 0; i < length; ++i)
+ 1fa:	44 23       	and	r20, r20
+ 1fc:	71 f0       	breq	.+28     	; 0x21a <twi_WriteTo+0x48>
+ 1fe:	fb 01       	movw	r30, r22
+ 200:	a4 e0       	ldi	r26, 0x04	; 4
+ 202:	b1 e0       	ldi	r27, 0x01	; 1
+ 204:	41 50       	subi	r20, 0x01	; 1
+ 206:	50 e0       	ldi	r21, 0x00	; 0
+ 208:	4f 5f       	subi	r20, 0xFF	; 255
+ 20a:	5f 4f       	sbci	r21, 0xFF	; 255
+ 20c:	64 0f       	add	r22, r20
+ 20e:	75 1f       	adc	r23, r21
+    {
+       twi_Master_Buffer[i] = data[i];
+ 210:	91 91       	ld	r25, Z+
+ 212:	9d 93       	st	X+, r25
+    // initialize buffer iteration vars
+    twi_Master_Buffer_Index= 0;
+    twi_Master_Buffer_Length = length;
+    
+    // copy data to twi buffer
+    for(unsigned char i = 0; i < length; ++i)
+ 214:	e6 17       	cp	r30, r22
+ 216:	f7 07       	cpc	r31, r23
+ 218:	d9 f7       	brne	.-10     	; 0x210 <twi_WriteTo+0x3e>
+    {
+       twi_Master_Buffer[i] = data[i];
+    }
+    
+    // build sla+w, slave device address + w bit
+    twi_Last_Slave_Address_And_RW = TW_WRITE;
+ 21a:	10 92 24 01 	sts	0x0124, r1	; 0x800124 <twi_Last_Slave_Address_And_RW>
+    twi_Last_Slave_Address_And_RW |= address << 1;
+ 21e:	90 91 24 01 	lds	r25, 0x0124	; 0x800124 <twi_Last_Slave_Address_And_RW>
+ 222:	88 0f       	add	r24, r24
+ 224:	89 2b       	or	r24, r25
+ 226:	80 93 24 01 	sts	0x0124, r24	; 0x800124 <twi_Last_Slave_Address_And_RW>
+    
+    // if we're in a repeated start, then we've already sent the START
+    // in the ISR. Don't do it again.
+    //
+    if (twi_InRepStart) 
+ 22a:	80 91 26 01 	lds	r24, 0x0126	; 0x800126 <twi_InRepStart>
+ 22e:	88 23       	and	r24, r24
+ 230:	81 f0       	breq	.+32     	; 0x252 <twi_WriteTo+0x80>
+       // (@@@ we hope), and the TWI statemachine is just waiting for the address byte.
+       // We need to remove ourselves from the repeated start state before we enable interrupts,
+       // since the ISR is ASYNC, and we could get confused if we hit the ISR before cleaning
+       // up. Also, don't enable the START interrupt. There may be one pending from the
+       // repeated start that we sent outselves, and that would really confuse things.
+       twi_InRepStart = 0;			// remember, we're dealing with an ASYNC ISR
+ 232:	10 92 26 01 	sts	0x0126, r1	; 0x800126 <twi_InRepStart>
+       do
+       {
+          TWDR = twi_Last_Slave_Address_And_RW;
+ 236:	ab eb       	ldi	r26, 0xBB	; 187
+ 238:	b0 e0       	ldi	r27, 0x00	; 0
+       } while(TWCR & (1 << TWWC));
+ 23a:	ec eb       	ldi	r30, 0xBC	; 188
+ 23c:	f0 e0       	ldi	r31, 0x00	; 0
+       // up. Also, don't enable the START interrupt. There may be one pending from the
+       // repeated start that we sent outselves, and that would really confuse things.
+       twi_InRepStart = 0;			// remember, we're dealing with an ASYNC ISR
+       do
+       {
+          TWDR = twi_Last_Slave_Address_And_RW;
+ 23e:	90 91 24 01 	lds	r25, 0x0124	; 0x800124 <twi_Last_Slave_Address_And_RW>
+ 242:	9c 93       	st	X, r25
+       } while(TWCR & (1 << TWWC));
+ 244:	90 81       	ld	r25, Z
+ 246:	93 fd       	sbrc	r25, 3
+ 248:	fa cf       	rjmp	.-12     	; 0x23e <twi_WriteTo+0x6c>
+       TWCR = control_TWI_Handled() | mcontrol_TWI_On_State();	// enable INTs, but not START
+ 24a:	85 ec       	ldi	r24, 0xC5	; 197
+ 24c:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7e00bc>
+ 250:	03 c0       	rjmp	.+6      	; 0x258 <twi_WriteTo+0x86>
+    }
+    else
+    // send start condition
+    TWCR = control_TWI_Handled() | mcontrol_TWI_On_State() | control_TWI_Send_Start();	// enable INTs
+ 252:	85 ee       	ldi	r24, 0xE5	; 229
+ 254:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7e00bc>
+
+    // wait for write operation to complete
+    while(wait && (TWI_MASTER_TX == twi_State))
+ 258:	22 23       	and	r18, r18
+ 25a:	41 f0       	breq	.+16     	; 0x26c <twi_WriteTo+0x9a>
+ 25c:	80 91 27 01 	lds	r24, 0x0127	; 0x800127 <twi_State>
+ 260:	82 30       	cpi	r24, 0x02	; 2
+ 262:	21 f4       	brne	.+8      	; 0x26c <twi_WriteTo+0x9a>
+ 264:	80 91 27 01 	lds	r24, 0x0127	; 0x800127 <twi_State>
+ 268:	82 30       	cpi	r24, 0x02	; 2
+ 26a:	e1 f3       	breq	.-8      	; 0x264 <twi_WriteTo+0x92>
+    {
+       continue;
+    }
+    
+    if (twi_LastError == 0xFF)
+ 26c:	80 91 25 01 	lds	r24, 0x0125	; 0x800125 <twi_LastError>
+ 270:	8f 3f       	cpi	r24, 0xFF	; 255
+ 272:	79 f0       	breq	.+30     	; 0x292 <twi_WriteTo+0xc0>
+      return 0;	// success
+    else if (twi_LastError == TW_MT_SLA_NACK)
+ 274:	80 91 25 01 	lds	r24, 0x0125	; 0x800125 <twi_LastError>
+ 278:	80 32       	cpi	r24, 0x20	; 32
+ 27a:	41 f0       	breq	.+16     	; 0x28c <twi_WriteTo+0xba>
+      return 2;	// error: address send, nack received
+    else if (twi_LastError == TW_MT_DATA_NACK)
+ 27c:	80 91 25 01 	lds	r24, 0x0125	; 0x800125 <twi_LastError>
+ 280:	80 33       	cpi	r24, 0x30	; 48
+ 282:	31 f0       	breq	.+12     	; 0x290 <twi_WriteTo+0xbe>
+      return 3;	// error: data send, nack received
+    else
+      return 4;	// other twi error
+ 284:	34 e0       	ldi	r19, 0x04	; 4
+ 286:	05 c0       	rjmp	.+10     	; 0x292 <twi_WriteTo+0xc0>
+                           unsigned char sendStop )
+{
+    // ensure data will fit into buffer
+    if(TWI_BUFFER_LENGTH < length)
+    {
+       return 1;
+ 288:	31 e0       	ldi	r19, 0x01	; 1
+ 28a:	03 c0       	rjmp	.+6      	; 0x292 <twi_WriteTo+0xc0>
+    }
+    
+    if (twi_LastError == 0xFF)
+      return 0;	// success
+    else if (twi_LastError == TW_MT_SLA_NACK)
+      return 2;	// error: address send, nack received
+ 28c:	32 e0       	ldi	r19, 0x02	; 2
+ 28e:	01 c0       	rjmp	.+2      	; 0x292 <twi_WriteTo+0xc0>
+    else if (twi_LastError == TW_MT_DATA_NACK)
+      return 3;	// error: data send, nack received
+ 290:	33 e0       	ldi	r19, 0x03	; 3
+    else
+      return 4;	// other twi error
+}
+ 292:	83 2f       	mov	r24, r19
+ 294:	0f 91       	pop	r16
+ 296:	08 95       	ret
+
+00000298 <__vector_24>:
+
+ISR(TWI_vect)
+{
+ 298:	1f 92       	push	r1
+ 29a:	0f 92       	push	r0
+ 29c:	0f b6       	in	r0, 0x3f	; 63
+ 29e:	0f 92       	push	r0
+ 2a0:	11 24       	eor	r1, r1
+ 2a2:	2f 93       	push	r18
+ 2a4:	3f 93       	push	r19
+ 2a6:	4f 93       	push	r20
+ 2a8:	5f 93       	push	r21
+ 2aa:	6f 93       	push	r22
+ 2ac:	7f 93       	push	r23
+ 2ae:	8f 93       	push	r24
+ 2b0:	9f 93       	push	r25
+ 2b2:	af 93       	push	r26
+ 2b4:	bf 93       	push	r27
+ 2b6:	ef 93       	push	r30
+ 2b8:	ff 93       	push	r31
+   switch (twi_State)
+ 2ba:	80 91 27 01 	lds	r24, 0x0127	; 0x800127 <twi_State>
+ 2be:	82 30       	cpi	r24, 0x02	; 2
+ 2c0:	d9 f5       	brne	.+118    	; 0x338 <__vector_24+0xa0>
+   {
+      case TWI_MASTER_TX:
+         twi_Master_TX_Handler(TW_STATUS);
+ 2c2:	80 91 b9 00 	lds	r24, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7e00b9>
+     twi_State = TWI_AVAILABLE;
+}
+
+static void twi_Master_TX_Handler(unsigned char aiStatus)
+{
+   switch (aiStatus)
+ 2c6:	e8 2f       	mov	r30, r24
+ 2c8:	e8 7f       	andi	r30, 0xF8	; 248
+ 2ca:	8e 2f       	mov	r24, r30
+ 2cc:	90 e0       	ldi	r25, 0x00	; 0
+ 2ce:	fc 01       	movw	r30, r24
+ 2d0:	38 97       	sbiw	r30, 0x08	; 8
+ 2d2:	e1 33       	cpi	r30, 0x31	; 49
+ 2d4:	f1 05       	cpc	r31, r1
+ 2d6:	80 f5       	brcc	.+96     	; 0x338 <__vector_24+0xa0>
+ 2d8:	ec 5c       	subi	r30, 0xCC	; 204
+ 2da:	ff 4f       	sbci	r31, 0xFF	; 255
+ 2dc:	0c 94 ad 01 	jmp	0x35a	; 0x35a <__tablejump2__>
+   {
+      case TW_START: // 0x08
+      case TW_REP_START: // 0x10
+         // Load SLA+W
+         TWDR = twi_Last_Slave_Address_And_RW;
+ 2e0:	80 91 24 01 	lds	r24, 0x0124	; 0x800124 <twi_Last_Slave_Address_And_RW>
+ 2e4:	80 93 bb 00 	sts	0x00BB, r24	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7e00bb>
+static void handler_TWI_Reply(unsigned char ack)
+{
+   // transmit master read ready signal, with or without ack
+   if(ack)
+   {
+      TWCR = mcontrol_TWI_On_State() | control_TWI_Handled();
+ 2e8:	85 ec       	ldi	r24, 0xC5	; 197
+ 2ea:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7e00bc>
+ 2ee:	24 c0       	rjmp	.+72     	; 0x338 <__vector_24+0xa0>
+         handler_TWI_Reply(1);
+         break;
+      case TW_MT_SLA_ACK:
+      case TW_MT_DATA_ACK:
+         // Load data byte
+         if( twi_Master_Buffer_Index < twi_Master_Buffer_Length )
+ 2f0:	90 91 02 01 	lds	r25, 0x0102	; 0x800102 <__data_end>
+ 2f4:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <twi_Master_Buffer_Length>
+ 2f8:	98 17       	cp	r25, r24
+ 2fa:	80 f4       	brcc	.+32     	; 0x31c <__vector_24+0x84>
+         {
+            // There is data to send.
+            TWDR = twi_Master_Buffer[twi_Master_Buffer_Index++];
+ 2fc:	e0 91 02 01 	lds	r30, 0x0102	; 0x800102 <__data_end>
+ 300:	81 e0       	ldi	r24, 0x01	; 1
+ 302:	8e 0f       	add	r24, r30
+ 304:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <__data_end>
+ 308:	f0 e0       	ldi	r31, 0x00	; 0
+ 30a:	ec 5f       	subi	r30, 0xFC	; 252
+ 30c:	fe 4f       	sbci	r31, 0xFE	; 254
+ 30e:	80 81       	ld	r24, Z
+ 310:	80 93 bb 00 	sts	0x00BB, r24	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7e00bb>
+static void handler_TWI_Reply(unsigned char ack)
+{
+   // transmit master read ready signal, with or without ack
+   if(ack)
+   {
+      TWCR = mcontrol_TWI_On_State() | control_TWI_Handled();
+ 314:	85 ec       	ldi	r24, 0xC5	; 197
+ 316:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7e00bc>
+ 31a:	0e c0       	rjmp	.+28     	; 0x338 <__vector_24+0xa0>
+         {
+            // There is data to send.
+            TWDR = twi_Master_Buffer[twi_Master_Buffer_Index++];
+            handler_TWI_Reply(1);
+         }
+         else if (twi_SendStop)
+ 31c:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+ 320:	88 23       	and	r24, r24
+ 322:	51 f0       	breq	.+20     	; 0x338 <__vector_24+0xa0>
+         {
+            // We're done
+            handler_TWI_Stop();
+ 324:	0e 94 cd 00 	call	0x19a	; 0x19a <handler_TWI_Stop>
+ 328:	07 c0       	rjmp	.+14     	; 0x338 <__vector_24+0xa0>
+         }
+         break;
+      case TW_MT_DATA_NACK:
+      case TW_MT_SLA_NACK:
+      case TW_MT_ARB_LOST:
+         handler_TWI_Stop();
+ 32a:	0e 94 cd 00 	call	0x19a	; 0x19a <handler_TWI_Stop>
+         twi_LastError = TW_STATUS;
+ 32e:	80 91 b9 00 	lds	r24, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7e00b9>
+ 332:	88 7f       	andi	r24, 0xF8	; 248
+ 334:	80 93 25 01 	sts	0x0125, r24	; 0x800125 <twi_LastError>
+      case TWI_SLAVE_TX:
+      case TWI_SLAVE_RX:
+      default:
+         break;
+   }
+ 338:	ff 91       	pop	r31
+ 33a:	ef 91       	pop	r30
+ 33c:	bf 91       	pop	r27
+ 33e:	af 91       	pop	r26
+ 340:	9f 91       	pop	r25
+ 342:	8f 91       	pop	r24
+ 344:	7f 91       	pop	r23
+ 346:	6f 91       	pop	r22
+ 348:	5f 91       	pop	r21
+ 34a:	4f 91       	pop	r20
+ 34c:	3f 91       	pop	r19
+ 34e:	2f 91       	pop	r18
+ 350:	0f 90       	pop	r0
+ 352:	0f be       	out	0x3f, r0	; 63
+ 354:	0f 90       	pop	r0
+ 356:	1f 90       	pop	r1
+ 358:	18 95       	reti
+
+0000035a <__tablejump2__>:
+ 35a:	ee 0f       	add	r30, r30
+ 35c:	ff 1f       	adc	r31, r31
+ 35e:	05 90       	lpm	r0, Z+
+ 360:	f4 91       	lpm	r31, Z
+ 362:	e0 2d       	mov	r30, r0
+ 364:	09 94       	ijmp
+
+00000366 <_exit>:
+ 366:	f8 94       	cli
+
+00000368 <__stop_program>:
+ 368:	ff cf       	rjmp	.-2      	; 0x368 <__stop_program>

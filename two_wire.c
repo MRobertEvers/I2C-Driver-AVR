@@ -143,7 +143,7 @@ static void twi_Master_RX_Handler(unsigned char aiStatus)
       case TW_REP_START: // 0x10
          // Load SLA+R
          TWDR = twi_Last_Slave_Address_And_RW;
-         handler_TWI_Reply(1);
+         handler_TWI_Reply(1); // Clear the TWINT so that the TWI module knows we're done.
          break;
       case TW_MT_SLA_ACK:
       case TW_MT_DATA_ACK:
@@ -152,7 +152,7 @@ static void twi_Master_RX_Handler(unsigned char aiStatus)
          {
             // There is data to send.
             TWDR = twi_Master_Buffer[twi_Master_Buffer_Index++];
-            handler_TWI_Reply(1);
+            handler_TWI_Reply(1); // Clear the TWINT so that the TWI module knows we're done.
          }
          else if (twi_SendStop)
          {
@@ -268,6 +268,7 @@ ISR(TWI_vect)
          twi_Master_TX_Handler(TW_STATUS);
          break;
       case TWI_MASTER_RX:
+         break;
       case TWI_SLAVE_TX:
       case TWI_SLAVE_RX:
       default:
