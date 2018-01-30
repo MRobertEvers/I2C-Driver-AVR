@@ -27,7 +27,7 @@ int main(void)
         buffer[0] = 0;
         for (uint8_t i=1; i<17; i++) 
         {
-           buffer[i] = 0xFF;//1 << counter+i;
+           buffer[i] = 1 << (counter+i)%8;
         }
         twi_Init();
 

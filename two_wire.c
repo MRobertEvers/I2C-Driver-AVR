@@ -56,7 +56,7 @@ static void twi_Set_BR(unsigned int aiFreq)
 static void handler_TWI_Repeated_Start(void)
 {
    // Hold the bus. We've already sent the NACK if RX.
-   twi_InRepStart = true;	// we're gonna send the START
+   twi_InRepStart = 1;	// we're gonna send the START
    // don't enable the interrupt. We'll generate the start, but we
    // avoid handling the interrupt until we're in the next transaction,
    // at the point where we would normally issue the start.
