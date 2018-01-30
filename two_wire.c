@@ -268,6 +268,7 @@ ISR(TWI_vect)
          twi_Master_TX_Handler(TW_STATUS);
          break;
       case TWI_MASTER_RX:
+         twi_Master_RX_Handler(TW_STATUS);
          break;
       case TWI_SLAVE_TX:
       case TWI_SLAVE_RX:

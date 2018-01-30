@@ -21,7 +21,7 @@
 #define TWI_BUFFER_LENGTH 32
 
 #define CLOCK_FREQUENCY 20000000
-#define SCL_FREQUENCY 100
+#define SCL_FREQUENCY 100000L
 
 void twi_Init(void);
 unsigned char twi_WriteTo( unsigned char address, unsigned char* data,
