@@ -133,12 +133,6 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="LED.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="LED.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
@@ -146,6 +140,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="two_wire.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="two_wire_control.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>

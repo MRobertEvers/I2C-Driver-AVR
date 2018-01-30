@@ -24,7 +24,7 @@
 #define SCL_FREQUENCY 100000L
 
 void twi_Init(void);
-unsigned char twi_WriteTo( unsigned char address, unsigned char* data,
+unsigned char twi_Write( unsigned char address, unsigned char* data,
                            unsigned char length, unsigned char wait,
                            unsigned char sendStop );
 

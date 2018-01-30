@@ -12,5 +12,4 @@
 
 
 
-
 #endif /* TWO_WIRE_CONTROL_H_ */

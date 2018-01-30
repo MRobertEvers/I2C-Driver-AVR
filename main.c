@@ -32,11 +32,11 @@ int main(void)
         twi_Init();
 
         // This is from the LED Doc. Will work on this magic document.
-        twi_WriteTo(0x70, oscBuff, 1, 1, 1);
-        twi_WriteTo(0x70, onBuff, 1, 1, 1);
-        twi_WriteTo(0x70, brightBuff, 1, 1, 1);
+        twi_Write(0x70, oscBuff, 1, 1, 1);
+        twi_Write(0x70, onBuff, 1, 1, 1);
+        twi_Write(0x70, brightBuff, 1, 1, 1);
 
-        twi_WriteTo(0x70, buffer, 17, 1, 1);
+        twi_Write(0x70, buffer, 17, 1, 1);
 
         counter++;
         if (counter >= 16) counter = 0;
