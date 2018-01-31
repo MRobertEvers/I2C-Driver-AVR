@@ -21,14 +21,29 @@ int main(void)
     {
         // paint one LED per row. The HT16K33 internal memory looks like
         // a 8x16 bit matrix (8 rows, 16 columns)
-        brightBuff[0] = 0xEF;
         onBuff[0] = 0x81;
         oscBuff[0] = 0x21;
-        buffer[0] = 0;
-        for (uint8_t i=1; i<17; i++) 
-        {
-           buffer[i] = 1 << (counter+i)%8;
-        }
+        buffer[0] = 2;
+        buffer[1] = 0x80;
+        buffer[2] = 0;
+        buffer[3] = 1;
+        buffer[4] = 0;
+        buffer[5] = 2;
+        buffer[6] = 0;
+        buffer[7] = 4;
+        buffer[8] = 0;
+        buffer[9] = 8;
+        buffer[10] = 0;
+        buffer[11] = 0x10;
+        buffer[12] = 0;
+        buffer[13] = 0x20;
+        buffer[14] = 0;
+        buffer[15] = 0x40;
+        buffer[16] = 0;
+        //for (uint8_t i=1; i<4; i++) 
+        //{
+           //buffer[i] = i*i;
+        //}
         twi_Init();
 
         // This is from the LED Doc. Will work on this magic document.

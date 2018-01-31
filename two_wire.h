@@ -28,4 +28,9 @@ unsigned char twi_Write( unsigned char address, unsigned char* data,
                            unsigned char length, unsigned char wait,
                            unsigned char sendStop );
 
+unsigned char twi_Read( unsigned char address, unsigned char* outputBuffer,
+                        unsigned char oBufLength, unsigned char sendStop );
+
+
+
 #endif /* TWO_WIRE_H_ */

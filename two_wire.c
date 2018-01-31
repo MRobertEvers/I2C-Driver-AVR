@@ -190,6 +190,11 @@ static void twi_Master_RX_Handler(unsigned char aiStatus)
    }
 }
 
+void twi_Slave_TX_Handler(void)
+{
+
+}
+
 void twi_Init(void)
 {
   twi_State = TWI_AVAILABLE;
@@ -256,8 +261,8 @@ unsigned char twi_Write( unsigned char address, unsigned char* data,
       return 4;	// other twi error
 }
 
-void twi_Read( unsigned char address, unsigned char* outputBuffer,
-               unsigned char oBufLength, unsigned char sendStop )
+unsigned char twi_Read( unsigned char address, unsigned char* outputBuffer,
+                        unsigned char oBufLength, unsigned char sendStop )
 {
     // wait until twi is ready, become master transmitter
     while(twi_State != TWI_AVAILABLE)
