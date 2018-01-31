@@ -23,33 +23,18 @@ int main(void)
         // a 8x16 bit matrix (8 rows, 16 columns)
         onBuff[0] = 0x81;
         oscBuff[0] = 0x21;
-        buffer[0] = 2;
-        buffer[1] = 0x80;
-        buffer[2] = 0;
-        buffer[3] = 1;
-        buffer[4] = 0;
-        buffer[5] = 2;
-        buffer[6] = 0;
-        buffer[7] = 4;
-        buffer[8] = 0;
-        buffer[9] = 8;
-        buffer[10] = 0;
-        buffer[11] = 0x10;
-        buffer[12] = 0;
-        buffer[13] = 0x20;
-        buffer[14] = 0;
-        buffer[15] = 0x40;
-        buffer[16] = 0;
-        //for (uint8_t i=1; i<4; i++) 
-        //{
-           //buffer[i] = i*i;
-        //}
+        buffer[0] = 0;
+        for (uint8_t i=1; i<17; i+=2)
+        {
+            unsigned char temp = 1 << i/2;
+            temp = temp >> 1 | (temp << 7);
+           buffer[i] = temp;
+        }
         twi_Init();
 
         // This is from the LED Doc. Will work on this magic document.
         twi_Write(0x70, oscBuff, 1, 1, 1);
         twi_Write(0x70, onBuff, 1, 1, 1);
-        twi_Write(0x70, brightBuff, 1, 1, 1);
 
         twi_Write(0x70, buffer, 17, 1, 1);
 

@@ -47,3 +47,8 @@ The connected columns are the even columns. I.E. the 0s below indicate the uncon
     buffer[15] = 0x40;
     buffer[16] = 0;
 	
+Row Meaning
+-----------
+Each bit in the char corresponding to a buffer position in the buffer above represents an LED in that column.
+The most significant bit of the MSB is really the Zeroth column. Then the least significant bit of the LSB is the first column... So You need to shift the bits and put the MS(bit) into the LS(bit). Something like `temp = temp >> 1 | (temp << 7);`
+	
