@@ -66,7 +66,9 @@ static void handler_TWI_Repeated_Start(void)
 
 static void handler_TWI_Reply(unsigned char ack)
 {
-   // transmit master read ready signal, with or without ack
+   // Note that this ack applies to the NEXT time we receive data.
+   // We are setting the control register to say that it should send
+   // ACK when appropriate.
    if(ack)
    {
       TWCR = MTWCR_SET_ON | TWCR_INTERRUPT_HANDLED;
