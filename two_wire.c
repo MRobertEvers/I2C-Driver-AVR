@@ -64,12 +64,12 @@ static void handler_TWI_Repeated_Start(void)
    twi_State = TWI_AVAILABLE;
 }
 
-static void handler_TWI_Reply(unsigned char ack)
+static void handler_TWI_Set_Handled_Ack_Next(unsigned char abShouldAck)
 {
    // Note that this ack applies to the NEXT time we receive data.
    // We are setting the control register to say that it should send
    // ACK when appropriate.
-   if(ack)
+   if(abShouldAck)
    {
       TWCR = MTWCR_SET_ON | TWCR_INTERRUPT_HANDLED;
    }
@@ -124,7 +124,7 @@ static void twi_Master_TX_Handler(unsigned char aiStatus)
       case TW_REP_START: // 0x10
          // Load SLA+W
          TWDR = twi_Last_Slave_Address_And_RW;
-         handler_TWI_Reply(0);
+         handler_TWI_Set_Handled_Ack_Next(0);
          break;
       case TW_MT_SLA_ACK:
       case TW_MT_DATA_ACK:
@@ -133,7 +133,7 @@ static void twi_Master_TX_Handler(unsigned char aiStatus)
          {
             // There is data to send.
             TWDR = twi_Master_Buffer[twi_Master_Buffer_Index++];
-            handler_TWI_Reply(0);
+            handler_TWI_Set_Handled_Ack_Next(0);
          }
          else if (twi_SendStop)
          {
@@ -162,11 +162,11 @@ static void twi_Master_RX_Handler(unsigned char aiStatus)
       case TW_REP_START: // 0x10
          // Load SLA+R
          TWDR = twi_Last_Slave_Address_And_RW;
-         handler_TWI_Reply(1); // Clear the TWINT so that the TWI module knows we're done.
+         handler_TWI_Set_Handled_Ack_Next(1); // Clear the TWINT so that the TWI module knows we're done.
          break;
       case TW_MR_SLA_ACK:
          // Set the TWCR so that when a data byte is received, ACK is returned.
-         handler_TWI_Reply(1); 
+         handler_TWI_Set_Handled_Ack_Next(1); 
          break;
       case TW_MR_DATA_ACK:
          // Data has been received. If there is room
@@ -176,7 +176,7 @@ static void twi_Master_RX_Handler(unsigned char aiStatus)
             twi_Master_Buffer[twi_Master_Buffer_Index++] = TWDR;
             // Set the TWCR so that if another data byte is received, NACK is returned because
             // we are out of memory.
-            handler_TWI_Reply(twi_Master_Buffer_Index < twi_Master_Buffer_Length);
+            handler_TWI_Set_Handled_Ack_Next(twi_Master_Buffer_Index < twi_Master_Buffer_Length);
          }
          else
          {
